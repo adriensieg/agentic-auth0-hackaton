@@ -47,7 +47,7 @@ Each of these is a distinct protocol problem. None is automatically inherited fr
 
 | # | Problem | Protocol gap | Consequence if unsolved |
 |---|---|---|---|
-| 1 | ChatGPT is authenticated but the human user is not identified | OAuth 2.0 without OIDC carries no user identity | MCP server cannot map the request to a specific Uber account |
+| 1 | ChatGPT is authenticated but the human user is not identified | OAuth 2.1 without OIDC carries no user identity | MCP server cannot map the request to a specific Uber account |
 | 2 | MCP server has no Uber credentials for the user | Uber tokens are user-scoped, issued separately, must be stored and refreshed | Ride cannot be booked regardless of Boundary 1 being correctly configured |
 | 3 | Financial transaction requires explicit out-of-band user confirmation | Neither OAuth nor MCP provide a transaction confirmation primitive | Real money moves without verified user intent — compliance and fraud risk |
 
@@ -56,8 +56,8 @@ Each of these is a distinct protocol problem. None is automatically inherited fr
 ### Break 1 — ChatGPT is authenticated, but the user is not
 When ChatGPT connects to our MCP server, OAuth 2.1 authenticates the ChatGPT application — not the human behind it. 
 
-The access token your MCP server receives proves that OpenAI's client is authorized to call your tools. It carries zero information about which specific human issued the command.
-OpenAI's MCP integration uses OAuth 2.0 without OpenID Connect. No ID token is issued. No sub claim. No user profile. The human is invisible at the protocol level.
+The access token your MCP server receives proves that OpenAI's client is authorized to call our tools. It carries zero information about which specific human issued the command.
+OpenAI's MCP integration uses OAuth 2.1 without OpenID Connect. No ID token is issued. No sub claim. No user profile. The human is invisible at the protocol level.
 Your MCP server receives a legitimate, cryptographically valid token — and has no idea whose Uber account to charge.
 
 ### Break 2 — our MCP server has no standing with Uber
