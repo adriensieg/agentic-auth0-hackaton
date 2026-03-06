@@ -62,7 +62,9 @@ Your MCP server receives a legitimate, cryptographically valid token — and has
 
 ### Break 2 — our MCP server has no standing with Uber
 Even if you resolve the user's identity, your MCP server cannot call Uber's API on their behalf without a user-scoped Uber OAuth token — one that was issued specifically because that user went through Uber's own consent screen and explicitly authorized your application to book rides on their account.
-That token does not exist automatically. It must be obtained, stored securely, refreshed before expiry, and retrieved at request time — for every individual user, independently. If it is missing, expired, or stored incorrectly, the ride cannot be booked regardless of how well Boundary 1 is configured.
+That token does not exist automatically. It must be obtained, stored securely, refreshed before expiry, and retrieved at request time — for every individual user, independently. 
+
+If it is missing, expired, or stored incorrectly, the ride cannot be booked regardless of how well Boundary 1 is configured.
 The Auth0 JWT from Boundary 1 and the Uber OAuth token from Boundary 2 are issued by different authorization servers, scoped to different resources, and govern completely different trust relationships. They cannot substitute for each other.
 
 ### Break 3 — A financial transaction requires explicit user confirmation
