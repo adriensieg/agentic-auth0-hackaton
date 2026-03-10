@@ -4,7 +4,7 @@ How do you securely **identify a human user**, **retrieve their pre-authorized t
 
 It's a **multi-party authorization problem** on how to Book and Pay a Uber (or Lyft) Ride Inside a 3rd party **conversational AI interface**.
 
-### The Vision
+## The Vision
 Tomorrow, a user **opens ChatGPT**, types *"Book me an Uber to O'Hare"*, and the ride is confirmed — **without ever opening the Uber app**. 
 - **ChatGPT becomes the interface**.
 - **Uber** becomes a **backend service**.
@@ -18,7 +18,7 @@ This is not a **UX convenience story**. It is a **multi-party authorization prob
 
 I implemented a **secure**, **OAuth-protected MCP server** that enables any AI Assistant to **discover products**, **execute commerce tools**, and **complete end-to-end Agentic Commerce transactions** through a standardized and trusted protocol.
 
-### The Core Problem We're Solving
+## The Core Problem We're Solving
 A user saying "book me an Uber" inside ChatGPT triggers a **3-party authorization chain**: 
 
 1. ChatGPT must prove its **application identity** to our MCP server (Boundary 1, solved via PKCE + Auth0-issued JWT),
@@ -92,6 +92,8 @@ resolves ChatGPT session   auto-refreshes per-user       confirmation to
 token into a user-         Uber OAuth tokens,            user's phone,
 identity-bearing token     retrieved on demand           out-of-band
 ```
+
+<img width="80%" height="80%" alt="image" src="https://github.com/user-attachments/assets/fbf8a72a-7c4c-4fd8-9bdc-f210ada95072" />
 
 # What is blocked — and why
 
