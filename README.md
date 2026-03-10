@@ -119,13 +119,20 @@ OpenAI chatgpt integrates with our **OAuth-protected MCP** server by performing 
 In traditional web apps, we often combine **OAuth + OpenID Connect (OIDC)** to both **authenticate** and **authorize users**.
 In the OpenAI chatgpt SDK integration, **only OAuth 2.1 is used** — **not OIDC.** So there’s **no user identity payload** (**no ID token**, **no claims** about the user).
 
-# What has it been developed? The state of the solution
+# What has it been developed for this hackaton? 
 
 ### Solution 1 — ChatGPT is authenticated with any AI Assistant
 
 - Here is the explanation: https://youtu.be/qwtwGqpXluE
 
 ### Solution 2 — Building an MCP server for Uber API integration
+
+1. User logs in via Auth0
+2. Auth0 asks Uber for permission
+3. Uber returns tokens
+4. Auth0 stores tokens in Token Vault
+5. MCP server requests token when needed
+6. MCP server calls Uber API
 
 ```
 agentic-commerce/
