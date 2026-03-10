@@ -53,14 +53,14 @@ Each of these is a distinct protocol problem. None is automatically inherited fr
 # The Problem Statement
 
 ### Break 1 — ChatGPT is authenticated, but the user is not
-When ChatGPT connects to our MCP server, OAuth 2.1 authenticates the ChatGPT application — not the human behind it. 
+When ChatGPT connects to our MCP server, **OAuth 2.1 authenticates the ChatGPT application** — **not the human behind it**. 
 
-The access token your MCP server receives proves that OpenAI's client is authorized to call our tools. It carries zero information about which specific human issued the command.
-OpenAI's MCP integration uses OAuth 2.1 without OpenID Connect. No ID token is issued. No sub claim. No user profile. The human is invisible at the protocol level.
-Your MCP server receives a legitimate, cryptographically valid token — and has no idea whose Uber account to charge.
+The access token your MCP server receives proves that **OpenAI's client is authorized to call our tools**. It carries **zero information** about which specific human issued the command.
+OpenAI's MCP integration uses OAuth 2.1 **without OpenID Connect**. No `ID token` is issued. No sub `claim`. No `user profile`. **The human is invisible at the protocol level**.
+Your MCP server receives a **legitimate**, **cryptographically valid token** — and has **no idea whose Uber account to charge**.
 
 ### Break 2 — our MCP server has no standing with Uber
-Even if you resolve the user's identity, your MCP server cannot call Uber's API on their behalf without a user-scoped Uber OAuth token — one that was issued specifically because that user went through Uber's own consent screen and explicitly authorized your application to book rides on their account.
+Even if you resolve the user's identity, your MCP server **cannot call Uber's API on their behalf without a user-scoped Uber OAuth token** — one that was issued specifically because that user went through Uber's own consent screen and explicitly authorized your application to book rides on their account.
 That token does not exist automatically. It must be obtained, stored securely, refreshed before expiry, and retrieved at request time — for every individual user, independently. 
 
 If it is missing, expired, or stored incorrectly, the ride cannot be booked regardless of how well Boundary 1 is configured.
