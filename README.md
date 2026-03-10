@@ -65,8 +65,6 @@ The access token your MCP server receives proves that **OpenAI's client is autho
 OpenAI's MCP integration uses OAuth 2.1 **without OpenID Connect**. No `ID token` is issued. No sub `claim`. No `user profile`. **The human is invisible at the protocol level**.
 Your MCP server receives a **legitimate**, **cryptographically valid token** — and has **no idea whose Uber account to charge**.
 
-Here is the explanation: https://youtu.be/qwtwGqpXluE
-
 ### Break 2 — our MCP server has no standing with Uber
 Even if you resolve the user's identity, your MCP server **cannot call Uber's API on their behalf without a user-scoped Uber OAuth token** — one that was issued specifically because that user went through Uber's own consent screen and explicitly authorized your application to book rides on their account.
 That token does not exist automatically. It must be obtained, stored securely, refreshed before expiry, and retrieved at request time — for every individual user, independently. 
@@ -119,7 +117,13 @@ OpenAI chatgpt integrates with our **OAuth-protected MCP** server by performing 
 In traditional web apps, we often combine **OAuth + OpenID Connect (OIDC)** to both **authenticate** and **authorize users**.
 In the OpenAI chatgpt SDK integration, **only OAuth 2.1 is used** — **not OIDC.** So there’s **no user identity payload** (**no ID token**, **no claims** about the user).
 
-# What has it been developed? 
+# What has it been developed? The state of the solution
+
+### Solution 1 — ChatGPT is authenticated with any AI Assistant
+
+- Here is the explanation: https://youtu.be/qwtwGqpXluE
+
+### Solution 2 — Building an MCP server for Uber API integration
 
 ```
 agentic-commerce/
@@ -145,6 +149,8 @@ agentic-commerce/
 ├── requirements.txt
 └── README.md
 ```
+
+You can try the Commerce Protocol out here - https://mistralai.devailab.work/mcp.
 
 
 # Bibliography
