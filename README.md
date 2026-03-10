@@ -97,21 +97,12 @@ identity-bearing token     retrieved on demand           out-of-band
 
 <img width="80%" height="80%" alt="image" src="https://github.com/user-attachments/assets/fbf8a72a-7c4c-4fd8-9bdc-f210ada95072" />
 
-# What is blocked — and why
+# What is blocked — and why? What are the limits? 
 
 #### OpenAI does not expose user identity through the MCP layer.
 **RFC 8693 Token Exchange** works only if Auth0 can resolve the incoming ChatGPT token to a known user. 
 Currently, **OpenAI does not pass verifiable user identity claims through the MCP connection**. 
 We can work around this — but it requires either **OpenAI adding OIDC support**, or **a separate user-linking** step during onboarding that correlates the **ChatGPT session** to our **internal user record**. Doable, but not clean.
-
-#### Uber's API access requires business approval.
-Uber's ride-request API (`POST /v1.2/requests`) is **not publicly open**. 
-Uber must **explicitly grant our application access to book rides on behalf of users**. This is a commercial and legal dependency — not a technical one. Without it, Boundary 2 cannot go to production regardless of how well everything else is built.
-
-### ChatGPT SDK
-The **ChatGPT SDK** lets developers bring their products directly into ChatGPT with **custom Ul components**, **API access**, and **user context** that can **persist** across chats. It's built on Model Context Protocol (**MCP**), which defines how ChatGPT communicates with our app through **tools**, **resources**, and **structured data**.
-
-OpenAI chatgpt integrates with our **OAuth-protected MCP** server by performing **resource** and **authorization server discovery**, **dynamic client registration** (**DCR**), and a **PKCE-based authorization code flow** with **Auth0** to obtain a **JWT access token**, which our server verifies via **JWKS public keys** before allowing **SSE-based MCP tool execution** and seamless **token refresh** for ongoing secure access.
 
 - The **OAuth flow** authenticates **OpenAI chatgpt** (**the client**) to our **MCP service** (**the resource provider**). 
 - It does **NOT** **authenticate** or **identify the individual human** (OpenAI chatgpt's user) to us.
@@ -121,9 +112,17 @@ OpenAI chatgpt integrates with our **OAuth-protected MCP** server by performing 
 In traditional web apps, we often combine **OAuth + OpenID Connect (OIDC)** to both **authenticate** and **authorize users**.
 In the OpenAI chatgpt SDK integration, **only OAuth 2.1 is used** — **not OIDC.** So there’s **no user identity payload** (**no ID token**, **no claims** about the user).
 
+#### Uber's API access requires business approval.
+Uber's ride-request API (`POST /v1.2/requests`) is **not publicly open**. 
+Uber must **explicitly grant our application access to book rides on behalf of users**. This is a commercial and legal dependency — not a technical one. Without it, Boundary 2 cannot go to production regardless of how well everything else is built.
+
 # What has it been developed for this hackaton? 
 
 ### Solution 1 — ChatGPT is authenticated with any AI Assistant
+
+The **AI assistant SDK** - known as **connectors** lets developers bring their **own products** directly into AI Assistant interface with **custom Ul components**, **API access**, and **user context** that can **persist** across chats. It's built on Model Context Protocol (**MCP**), which defines how ChatGPT communicates with our app through **tools**, **resources**, and **structured data**.
+
+OpenAI chatgpt integrates with our **OAuth-protected MCP** server by performing **resource** and **authorization server discovery**, **dynamic client registration** (**DCR**), and a **PKCE-based authorization code flow** with **Auth0** to obtain a **JWT access token**, which our server verifies via **JWKS public keys** before allowing **SSE-based MCP tool execution** and seamless **token refresh** for ongoing secure access.
 
 - Here is the explanation: https://youtu.be/qwtwGqpXluE
 
