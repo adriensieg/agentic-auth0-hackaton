@@ -144,6 +144,14 @@ Uber must **explicitly grant our application access to book rides on behalf of u
 9. Next time user asks about rides, your server asks Auth0: **"Give me this user's Uber token"**
 10. Auth0 returns the token → you call Uber API → done!
 
+User visits your auth URL → redirected to Auth0 → Auth0 redirects to Uber login
+User approves Uber permissions → Uber issues tokens to Auth0
+Auth0 stores tokens in its Token Vault (encrypted, per-user)
+Your MCP server asks Auth0 for the user's Uber token when a tool is called
+MCP server calls Uber API with that token
+
+
+
 ### Solution 1 — ChatGPT is authenticated with any AI Assistant
 
 The **AI assistant SDK** - known as **connectors** lets developers bring their **own products** directly into AI Assistant interface with **custom Ul components**, **API access**, and **user context** that can **persist** across chats. It's built on Model Context Protocol (**MCP**), which defines how ChatGPT communicates with our app through **tools**, **resources**, and **structured data**.
