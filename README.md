@@ -1,6 +1,6 @@
 # Agentic AI Takes Over Commerce - a multi-party authorization problem
 
-How do you securely **identify a human user**, **retrieve their pre-authorized third-party credentials**, and **confirm a financial transaction** across **two independent OAuth boundaries** — *in real time*, *transparently*, and inside an *external conversational AI interface* (such as *ChatGPT*, *Le Chat* or *Claude*)?
+How do we enable **AI assistants** (such as *Open AI ChatGPT*, *Mistral AI Le Chat* or *Anthropic Claude*)to execute **end‑to‑end agentic commerce** on **behalf of users** — in *real time* and *transparently* — while **preserving identity**, **consent**, and **trust** across multiple providers? Who **owns the transaction** when ChatGPT becomes the **interface** and every app becomes a **backend —and how do we **monetize** that securely?
 
 It's a **multi-party authorization problem** on how to Book and Pay a Uber (or Lyft) Ride Inside a 3rd party **conversational AI interface**.
 
