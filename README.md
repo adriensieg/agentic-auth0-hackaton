@@ -15,7 +15,8 @@ It's a **multi-party authorization problem** on how to Book and Pay a Uber (or L
 - [What Auth0 Must Solve Across Both Boundaries](https://github.com/adriensieg/agentic-commerce-auth0-hackaton/blob/master/README.md#what-auth0-must-solve-across-both-boundaries)
 - [What is blocked — and why? What are the limits?](https://github.com/adriensieg/agentic-commerce-auth0-hackaton/blob/master/README.md#what-is-blocked--and-why-what-are-the-limits)
 - [What has it been developed for this hackaton?](https://github.com/adriensieg/agentic-commerce-auth0-hackaton/blob/master/README.md#what-has-it-been-developed-for-this-hackaton)
-  -[Solution 1 — ChatGPT is authenticated with any AI Assistant](https://github.com/adriensieg/agentic-commerce-auth0-hackaton/blob/master/README.md#solution-1--chatgpt-is-authenticated-with-any-ai-assistant)
+  - [Solution 1 — ChatGPT is authenticated with any AI Assistant](https://github.com/adriensieg/agentic-commerce-auth0-hackaton/blob/master/README.md#solution-1--chatgpt-is-authenticated-with-any-ai-assistant)
+  - [Solution 2 — Building an MCP server for Uber API integration](https://github.com/adriensieg/agentic-commerce-auth0-hackaton/blob/master/README.md#solution-2--building-an-mcp-server-for-uber-api-integration)
 - [What's Agentic Commerce?](https://github.com/adriensieg/agentic-commerce-auth0-hackaton/blob/master/README.md#whats-agentic-commerce)
 
 ## The Vision
