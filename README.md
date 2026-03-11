@@ -6,6 +6,18 @@ Who **owns the transaction** when ChatGPT (or others) becomes the **interface** 
 
 It's a **multi-party authorization problem** on how to Book and Pay a Uber (or Lyft) Ride Inside a 3rd party **conversational AI interface**.
 
+- [The vision](https://github.com/adriensieg/agentic-commerce-auth0-hackaton/blob/master/README.md#the-vision)
+- [The Core Problem We're Solving](https://github.com/adriensieg/agentic-commerce-auth0-hackaton/blob/master/README.md#the-core-problem-were-solving)
+- [The Problem Statement](https://github.com/adriensieg/agentic-commerce-auth0-hackaton/blob/master/README.md#the-problem-statement)
+  - [Break 1 — ChatGPT is authenticated, but the user is not](https://github.com/adriensieg/agentic-commerce-auth0-hackaton/blob/master/README.md#break-1--chatgpt-is-authenticated-but-the-user-is-not)
+  - [Break 2 — our MCP server has no standing with Uber](https://github.com/adriensieg/agentic-commerce-auth0-hackaton/blob/master/README.md#break-2--our-mcp-server-has-no-standing-with-uber)
+  - [Break 3 — A financial transaction requires explicit user confirmation](https://github.com/adriensieg/agentic-commerce-auth0-hackaton/blob/master/README.md#break-3--a-financial-transaction-requires-explicit-user-confirmation)
+- [What Auth0 Must Solve Across Both Boundaries](https://github.com/adriensieg/agentic-commerce-auth0-hackaton/blob/master/README.md#what-auth0-must-solve-across-both-boundaries)
+- [What is blocked — and why? What are the limits?](https://github.com/adriensieg/agentic-commerce-auth0-hackaton/blob/master/README.md#what-is-blocked--and-why-what-are-the-limits)
+- [What has it been developed for this hackaton?](https://github.com/adriensieg/agentic-commerce-auth0-hackaton/blob/master/README.md#what-has-it-been-developed-for-this-hackaton)
+  -[Solution 1 — ChatGPT is authenticated with any AI Assistant](https://github.com/adriensieg/agentic-commerce-auth0-hackaton/blob/master/README.md#solution-1--chatgpt-is-authenticated-with-any-ai-assistant)
+- [What's Agentic Commerce?](https://github.com/adriensieg/agentic-commerce-auth0-hackaton/blob/master/README.md#whats-agentic-commerce)
+
 ## The Vision
 Tomorrow, a user opens ChatGPT and types: “Book me a ride to O’Hare.” The AI **compares prices**, **finds the cheapest option**, **confirms the ride**, **completes the payment** —
 — seamlessly, silently — without ever opening Uber, Lyft, or Grab. **No apps**, **No switching**, **No friction**.
