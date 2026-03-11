@@ -133,14 +133,14 @@ Uber must **explicitly grant our application access to book rides on behalf of u
 
 # What has it been developed for this hackaton? 
 
-1. User opens ChatGPT and types "Get me a fare estimate from Times Square to JFK" or "Book me a ride to O'Hare Airport"
-2. ChatGPT calls our MCP server via Custom Connector (which points to our MCP server)→ `get_auth_login_url()`
-3. Our MCP server checks: "Does this user have an Uber token?"
-4. If NO → It returns an Auth0 login URL to ChatGPT, user clicks it, logs in. Our server returns: "Click here to login → auth0.com/authorize?connection=uber"
-6. User clicks → Auth0 page → redirects to Uber login
+1. User opens ChatGPT and types **"Get me a fare estimate from Times Square to JFK"** or **"Book me a ride to O'Hare Airport"**
+2. ChatGPT calls our **MCP server** via **Custom Connector** (which points to our MCP server)→ `get_auth_login_url()`
+3. Our MCP server checks: **"Does this user have an Uber token?"**
+4. If NO → It returns an **Auth0 login URL** to **ChatGPT**, user clicks it, logs in. Our server returns: **"Click here to login → auth0.com/authorize?connection=uber"**
+6. User clicks → Auth0 page → redirects to **Uber login**
 7. User logs into Uber → Uber gives Auth0 a token
-8. Auth0 stores it in Token Vault, redirects user back to /callback  
-9. Next time user asks about rides, your server asks Auth0: "Give me this user's Uber token"
+8. Auth0 stores it in **Token Vault**, redirects user back to `/callback`
+9. Next time user asks about rides, your server asks Auth0: **"Give me this user's Uber token"**
 10. Auth0 returns the token → you call Uber API → done!
 
 ### Solution 1 — ChatGPT is authenticated with any AI Assistant
