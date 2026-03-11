@@ -10,6 +10,7 @@ It's a **multi-party authorization problem** on how to **order** and **pay** Ins
 - 💐 Send flowers instantly from your local nearby store inside Mistral AI Le Chat - https://youtu.be/671YMGWVHL0
 - 🍔 Order your favorite nearby burgers with Anthropic Claude - https://www.youtube.com/shorts/Cy-N7jy_BsQ
 
+### Contents
 - [The vision](https://github.com/adriensieg/agentic-commerce-auth0-hackaton/blob/master/README.md#the-vision)
 - [The Core Problem We're Solving](https://github.com/adriensieg/agentic-commerce-auth0-hackaton/blob/master/README.md#the-core-problem-were-solving)
 - [The Problem Statement](https://github.com/adriensieg/agentic-commerce-auth0-hackaton/blob/master/README.md#the-problem-statement)
